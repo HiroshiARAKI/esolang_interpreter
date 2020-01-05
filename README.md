@@ -37,14 +37,14 @@ You can change these orders to yours, and YOUR esolang is done !.
 ## For Example ...
 If you change the orders like
 ```cpp
-#define PTR_INCREMENT   '>'
-#define PTR_DECREMENT   '<'
-#define BYTE_INCREMENT  '+'
-#define BYTE_DECREMENT  '-'
-#define OUTPUT          '.'
-#define INPUT           ','
-#define LOOP_START      '['
-#define LOOP_END        ']'
+#define PTR_INCREMENT   'a'
+#define PTR_DECREMENT   'b'
+#define BYTE_INCREMENT  'c'
+#define BYTE_DECREMENT  'd'
+#define OUTPUT          'e'
+#define INPUT           'f'
+#define LOOP_START      'g'
+#define LOOP_END        'h'
 ```
 
 Then, the "Hello, world" code is
