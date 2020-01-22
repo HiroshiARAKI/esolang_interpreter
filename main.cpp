@@ -12,17 +12,10 @@
 
 #include <iostream>
 #include <stack>
+#include "orders.h"
 
 #define MEMORY_SIZE 1024
 
-#define PTR_INCREMENT   '>'
-#define PTR_DECREMENT   '<'
-#define BYTE_INCREMENT  '+'
-#define BYTE_DECREMENT  '-'
-#define OUTPUT          '.'
-#define INPUT           ','
-#define LOOP_START      '['
-#define LOOP_END        ']'
 
 using namespace std;
 

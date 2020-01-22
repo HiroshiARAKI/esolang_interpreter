@@ -1,9 +1,44 @@
 # Let's make your Esolang!
+![update](https://img.shields.io/badge/update-2020.01.22-9cf.svg?style=flat) 
+![cpp](https://img.shields.io/badge/C++-11-blue.svg?style=flat)  
 Do you know Esoteric programming language (esolang)?
 It is a very difficult language to understand that meaning.
 For example, there are Brainf*ck, Malbolge and Piet.  
   
 These codes I offer help you make an esolang based on Brainf*ck easily!
+
+# NEW! You can make BF-based Encryption  
+```console
+$ cd PROJECT_RROOT
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+$ ./enc [original message] [output filename]
+Original : 1234
+Size     : 4
+Done!
+
+$ ./bf [output filename]
+[original message]
+```
+
+For example, if you encode [original.txt](original.txt) (written "How are you?"), you will get the bf-code like this.
+  
+```text
+>+++++++[->++++++++++<]>++.
+>+++++++++++[->++++++++++<]>+.
+>+++++++++++[->++++++++++<]>+++++++++.
+>+++[->++++++++++<]>++.
+>+++++++++[->++++++++++<]>+++++++.
+>+++++++++++[->++++++++++<]>++++.
+>++++++++++[->++++++++++<]>+.
+>+++[->++++++++++<]>++.
+>++++++++++++[->++++++++++<]>+.
+>+++++++++++[->++++++++++<]>+.
+>+++++++++++[->++++++++++<]>+++++++.
+>++++++[->++++++++++<]>+++.
+```
 
 # First: use pure Brainf*ck
 ```console
@@ -19,7 +54,7 @@ Hello, world!
 You can use this project file as a Brainf*ck interpreter like this if you don't modify.
 
 # Second: modify coded
-At lines 18 - 25 in [main.cpp](main.cpp), you can find the orders of Brainf*ck.
+In [orders.cpp](orders.h), you can find the orders of Brainf*ck.
 
 ```cpp
 #define PTR_INCREMENT   '>'
