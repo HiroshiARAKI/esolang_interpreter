@@ -2,15 +2,33 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <random>
 
 #include "orders.h"
 
 using namespace std;
 
+char noise(){
+    char n = char(rand() % 256);
+    if(n != PTR_INCREMENT &&
+       n != PTR_DECREMENT &&
+       n != BYTE_INCREMENT &&
+       n != BYTE_DECREMENT &&
+       n != OUTPUT &&
+       n != INPUT &&
+       n != LOOP_START &&
+       n != LOOP_END)
+        return n;
+
+    return '\n';
+}
+
 vector<char> encode(int ascii){
     vector<char> res;
     res.reserve(256);
     res.emplace_back(PTR_INCREMENT);
+
+    res.emplace_back(noise());
 
     int loop = 0;
     int rest = ascii;
@@ -20,27 +38,37 @@ vector<char> encode(int ascii){
     }
 
     if(loop > 0) {  // if loop is existed
-        for (int i = 0; i < loop; ++i)
+        for (int i = 0; i < loop; ++i) {
+            res.emplace_back(noise());
             res.emplace_back(BYTE_INCREMENT); // ++ ... +  loop counter
+        }
+        res.emplace_back(noise());
         res.emplace_back(LOOP_START); // [  loop start
         res.emplace_back(BYTE_DECREMENT); // -  decrement loop counter
         res.emplace_back(PTR_INCREMENT);  // >  move the pointer to main
-        for (int j = 0; j < 10; ++j)
+        res.emplace_back(noise());
+        res.emplace_back(noise());
+        for (int j = 0; j < 10; ++j) {
+            res.emplace_back(noise());
             res.emplace_back(BYTE_INCREMENT);  // 10 times +
+            res.emplace_back(noise());
+        }
         res.emplace_back(PTR_DECREMENT);  // move to loop counter pointer
+        res.emplace_back(noise());
         res.emplace_back(LOOP_END);  // ]
         res.emplace_back(PTR_INCREMENT);  // move next pointer
     }
 
     for(int i = 0; i < rest; ++i){
         res.emplace_back(BYTE_INCREMENT);
+        res.emplace_back(noise());
     }
     res.emplace_back(OUTPUT);
-    res.emplace_back('\n');
     return res;
 }
 
 int main(int argc, char* argv[]){
+    random_device rnd;
 
     try{
 
