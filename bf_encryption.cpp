@@ -2,7 +2,6 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include <random>
 
 #include "orders.h"
 
@@ -68,7 +67,6 @@ vector<char> encode(int ascii){
 }
 
 int main(int argc, char* argv[]){
-    random_device rnd;
 
     try{
 
