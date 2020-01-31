@@ -85,6 +85,12 @@ For example, if you encode [original.txt](original.txt) (written "How are you?")
   
 Of course, you can use this as pure Brainf*ck encoder if you don't add noise.
 
+# Articles
+The japanese articles (in my blog) I wrote about this project is below.
+1. (2019.02.03)[まるで暗号．今更ながら難読プログラミング言語Brainf*ckを解読してみる](https://hirlab.net/nblog/category/programming/art_394/)
+2. (2020.01.05)[【C++】難解プログラミング言語を作ろう！【brainf*ckベース】](https://hirlab.net/nblog/category/programming/art_643/)
+3. (2020.01.22)[Brainf*ckで暗号を作ってみる【C++】](https://hirlab.net/nblog/category/programming/art_654/)
+
 # References
 1. [https://gist.github.com/7shi/527649](https://gist.github.com/7shi/527649)  
 2. [南関東開発機構 : 多重ループに対応したBrainfuckインタプリタ](http://blog.livedoor.jp/south_kanto_dm/archives/51691594.html)  
